@@ -1,0 +1,7 @@
+# Includes all files in subfolders
+hacs/*
+nrgi_prices/*
+nordpool/*
+ui_lovelace_minimalist/*
+
+!manifest.json

@@ -1,0 +1,19 @@
+---
+# Configuration file for Prettier
+#
+# Prettier formats my Home Assistant files automatically,
+# this makes things look consistently.
+#
+overrides:
+  - files:
+      - "*.yaml"
+      - "*.yml"
+    printWidth: 100
+    tabWidth: 2
+    useTabs: true
+
+  - files:
+      - "*.json"
+    indent_style: tab
+    tabWidth: 4
+    useTabs: true

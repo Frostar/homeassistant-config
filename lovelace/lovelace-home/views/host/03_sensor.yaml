@@ -1,0 +1,39 @@
+---
+- type: sensor
+  graph: none
+  detail: 2
+  entity: sensor.server_power
+
+- type: horizontal-stack
+  cards:
+    - graph: line
+      type: sensor
+      detail: 2
+      entity: sensor.server_sensor_temperature
+      name: Temperature
+    - graph: line
+      type: sensor
+      detail: 2
+      entity: sensor.server_sensor_humidity
+      name: Humidity
+
+- type: entities
+  view_layout:
+    position: main
+  state_color: false
+  show_header_toggle: true
+  entities:
+    - entity: sensor.processor_use
+    - entity: sensor.memory_use_percent
+    - entity: sensor.memory_use
+    - entity: sensor.memory_free
+    - entity: sensor.disk_use_percent
+    - entity: sensor.disk_use
+    - entity: sensor.disk_free
+    - entity: sensor.last_boot
+    - entity: sensor.load_1m
+    - entity: sensor.load_5m
+    - entity: sensor.load_15m
+    - entity: sensor.swap_use_percent
+    - entity: sensor.swap_use
+    - entity: sensor.swap_free

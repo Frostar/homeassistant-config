@@ -1,0 +1,18 @@
+ellen_lullaby:
+  sequence:
+    - if:
+        - condition: state
+          entity_id: media_player.stue
+          state: playing
+      then:
+        - service: media_player.media_pause
+          metadata: {}
+          data: {}
+          target:
+            entity_id: media_player.stue
+      else:
+        - service: media_player.media_play
+          metadata: {}
+          data: {}
+          target:
+            entity_id: media_player.stue

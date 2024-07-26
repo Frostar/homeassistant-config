@@ -1,0 +1,29 @@
+---
+- type: horizontal-stack
+  name: Musik
+  cards:
+    - type: light
+      entity: light.komet
+      icon: mdi:light-flood-up
+      name: Natlampe
+      hold_action:
+        action: more-info
+      double_tap_action:
+        action: none
+    - show_name: true
+      show_icon: true
+      type: button
+      tap_action:
+        action: call-service
+        service: script.ellen_lullaby
+        target: {}
+      entity: media_player.stue
+      icon: mdi:music-circle
+      show_state: true
+
+- type: media-control
+  entity: media_player.stue
+  visibility:
+    - condition: state
+      entity: media_player.stue
+      state: playing

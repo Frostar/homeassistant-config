@@ -1,0 +1,8 @@
+---
+lovelace-home:
+  mode: yaml
+  title: Home
+  icon: mdi:home
+  show_in_sidebar: true
+  require_admin: false
+  filename: lovelace/lovelace-home/dashboard.yaml

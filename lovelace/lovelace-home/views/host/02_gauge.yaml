@@ -1,0 +1,29 @@
+---
+- type: horizontal-stack
+  cards:
+    - type: gauge
+      entity: sensor.processor_use
+      min: 0
+      max: 100
+      severity:
+        green: 0
+        yellow: 80
+        red: 95
+      view_layout:
+        position: sidebar
+    - type: gauge
+      entity: sensor.memory_use_percent
+      min: 0
+      max: 100
+      severity:
+        green: 0
+        yellow: 80
+        red: 90
+    - type: gauge
+      entity: sensor.swap_use_percent
+      min: 0
+      max: 100
+      severity:
+        green: 0
+        yellow: 80
+        red: 90

@@ -1,0 +1,20 @@
+---
+- type: weather-forecast
+  show_current: true
+  show_forecast: true
+  entity: weather.ebv12
+  forecast_type: daily
+
+- type: glance
+  show_name: true
+  show_icon: true
+  show_state: true
+  entities:
+    - entity: sun.sun
+      name: Position
+    - entity: sensor.sun_next_rising
+      name: Next rising
+    - entity: sensor.sun_next_setting
+      name: Next setting
+  state_color: true
+  title: Sun

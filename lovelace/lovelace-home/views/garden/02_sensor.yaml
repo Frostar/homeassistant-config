@@ -1,0 +1,18 @@
+---
+- type: horizontal-stack
+  cards:
+    - graph: line
+      type: sensor
+      detail: 2
+      entity: sensor.lumi_lumi_weather_temperature
+      name: Temperature
+    - graph: line
+      type: sensor
+      detail: 2
+      entity: sensor.lumi_lumi_weather_humidity
+      name: Humidity
+    - graph: line
+      type: sensor
+      detail: 2
+      entity: sensor.lumi_lumi_weather_pressure
+      name: Pressure

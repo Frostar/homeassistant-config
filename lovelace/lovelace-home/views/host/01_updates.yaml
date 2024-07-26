@@ -1,0 +1,11 @@
+---
+- type: glance
+  show_name: true
+  show_icon: true
+  show_state: true
+  entities:
+    - entity: update.home_assistant_core_update
+    - entity: update.home_assistant_operating_system_update
+    - entity: update.home_assistant_supervisor_update
+  title: HA OS
+  state_color: true

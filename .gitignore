@@ -1,0 +1,35 @@
+# Ensures that everything will be ignored.
+/*
+
+# Whitelist files and folders.
+!*.yaml
+!.gitignore
+!.prettierignore
+!*.md
+!LICENSE
+!.HA_VERSION
+!.yamllint
+!.githooks/
+!.github/
+!.vscode/
+!custom_components/
+!esphome/
+!lovelace/
+!packages/
+!www/
+!themes/
+!zigbee2mqtt/
+!ui_lovelace_minimalist/
+
+# Ensures these folders are ignored.
+.storage
+.cloud
+.google.token
+__pycache__/
+
+# Ensures these files are ignored, otherwise secret data/credentials might leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+google_calendars.yaml
+service_account.json

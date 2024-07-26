@@ -1,0 +1,56 @@
+- id: '1679404243324'
+  alias: Depot autolys
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      light_target:
+        device_id: fc47daa94b16ed0500bdc2b35319755e
+      no_motion_wait: 45
+      motion_entity: binary_sensor.signify_netherlands_b_v_sml003_occupancy
+- id: '1679492737137'
+  alias: Depot switch on
+  description: ''
+  trigger:
+  - device_id: cdfcac3e551f4403edd0f6ce306f3387
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition:
+  - condition: and
+    conditions:
+    - condition: device
+      type: is_off
+      device_id: fc47daa94b16ed0500bdc2b35319755e
+      entity_id: light.hue_smartplug_switch
+      domain: light
+  action:
+  - type: turn_on
+    device_id: fc47daa94b16ed0500bdc2b35319755e
+    entity_id: switch.signify_netherlands_b_v_lom007_switch
+    domain: switch
+  mode: single
+- id: '1679492816408'
+  alias: Depot switch off
+  description: ''
+  trigger:
+  - device_id: cdfcac3e551f4403edd0f6ce306f3387
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  condition:
+  - condition: and
+    conditions:
+    - condition: device
+      type: is_on
+      device_id: fc47daa94b16ed0500bdc2b35319755e
+      entity_id: switch.signify_netherlands_b_v_lom007_switch
+      domain: switch
+  action:
+  - type: turn_off
+    device_id: fc47daa94b16ed0500bdc2b35319755e
+    entity_id: light.hue_smartplug_switch
+    domain: light
+  mode: single

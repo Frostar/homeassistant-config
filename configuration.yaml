@@ -1,0 +1,18 @@
+---
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  unit_system: metric
+  currency: DKK
+  country: DK
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: !secret radius
+
+  packages: !include_dir_named packages
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
