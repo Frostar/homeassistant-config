@@ -1,0 +1,17 @@
+---
+- type: todo-list
+  entity: todo.shopping
+
+- type: button
+  name: Clear
+  show_name: true
+  icon: mdi:basket-off
+  icon_height: 64px
+  show_icon: true
+  entity: todo.shopping
+  show_state: false
+  tap_action:
+    action: call-service
+    service: todo.remove_completed_items
+    target:
+      entity_id: todo.shopping

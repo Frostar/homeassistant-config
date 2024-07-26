@@ -1,9 +1,10 @@
 ---
-- type: weather-forecast
-  show_current: true
-  show_forecast: true
+- type: custom:clock-weather-card
   entity: weather.ebv12
-  forecast_type: daily
+  sun_entity: sun.sun
+  locale: da
+  timeformat: 24
+  date_pattern: cccc, d.MM.yyyy
 
 - type: glance
   show_name: true

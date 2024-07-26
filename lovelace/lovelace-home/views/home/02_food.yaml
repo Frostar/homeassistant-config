@@ -1,0 +1,6 @@
+---
+- type: horizontal-stack
+  title: Indkob
+  cards:
+    - type: todo-list
+      entity: todo.shopping

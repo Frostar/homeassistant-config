@@ -3,58 +3,13 @@ title: UI Lovelace Minimalist
 views:
   - title: Home
     path: home
+    icon: mdi:home
     type: sidebar
-    cards:
-      - type: entities
-        entities:
-          - entity: sensor.frost_iphone_ssid
-        show_header_toggle: true
-        title: Who home
-      - type: custom:apexcharts-card
-        graph_span: 24h
-        header:
-          title: Energy price today (dkk/kWh)
-          show: true
-        span:
-          start: day
-        now:
-          show: true
-          label: Now
-        apex_config:
-          yaxis:
-            min: 0
-        series:
-          - entity: sensor.nordpool_kwh_dk1_dkk_3_10_025
-            type: column
-            data_generator: |
-              return entity.attributes.raw_today.map((start, index) => {
-                return [new Date(start["start"]).getTime(), start["value"]];
-              });
-      - type: custom:apexcharts-card
-        graph_span: 24h
-        header:
-          title: Energy price tomorrow (dkk/kWh)
-          show: true
-        span:
-          start: day
-          offset: +1d
-        now:
-          show: true
-          label: Now
-        apex_config:
-          yaxis:
-            min: 0
-        series:
-          - entity: sensor.nordpool_kwh_dk1_dkk_3_10_025
-            type: column
-            data_generator: |
-              return entity.attributes.raw_tomorrow.map((start, index) => {
-                return [new Date(start["start"]).getTime(), start["value"]];
-              });
+    cards: !include_dir_merge_list ./views/home
 
   - title: Host
     path: host
-    icon: mdi:gauge
+    icon: mdi:server
     type: sidebar
     cards: !include_dir_merge_list ./views/host
 
@@ -63,6 +18,12 @@ views:
     icon: mdi:sprout
     type: sidebar
     cards: !include_dir_merge_list ./views/garden
+
+  - title: Shopping
+    path: shopping
+    icon: mdi:basket-check-outline
+    type: sidebar
+    cards: !include_dir_merge_list ./views/shopping
 
   - title: Ellen
     path: ellen

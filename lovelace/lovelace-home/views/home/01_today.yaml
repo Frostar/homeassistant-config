@@ -1,0 +1,16 @@
+---
+- type: horizontal-stack
+  title: Today
+  cards:
+    - type: custom:clock-weather-card
+      entity: weather.ebv12
+      sun_entity: sun.sun
+      locale: da
+      timeformat: 24
+      date_pattern: cccc, d.MM.yyyy
+
+    - type: calendar
+      initial_view: listWeek
+      entities:
+        - calendar.jens_jens
+        - calendar.heidi_heidi
