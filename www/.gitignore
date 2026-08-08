@@ -1,3 +1,6 @@
 # Includes all files in subfolders
 !*
 *.gz
+
+# HACS-managed frontend bundles — reinstalled by HACS, don't track
+community/

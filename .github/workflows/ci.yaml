@@ -1,0 +1,39 @@
+---
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run yamllint
+        uses: frenck/action-yamllint@v1
+
+  config-check:
+    name: Home Assistant config check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Provide stub secrets
+        run: cp .github/ci-secrets.yaml secrets.yaml
+
+      - name: Drop HACS component stubs (only manifests are tracked)
+        run: rm -rf custom_components
+
+      - name: Home Assistant config check
+        uses: frenck/action-home-assistant@v1
+        with:
+          path: "."
+          version: "stable"

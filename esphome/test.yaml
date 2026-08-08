@@ -28,4 +28,3 @@ wifi:
     password: !secret wifi_password
 
 captive_portal:
-
