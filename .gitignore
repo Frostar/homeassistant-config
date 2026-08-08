@@ -33,3 +33,7 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 service_account.json
+
+# zigbee2mqtt: config holds MQTT password + Zigbee network key — never commit
+zigbee2mqtt/configuration*.yaml
+zigbee2mqtt/log/

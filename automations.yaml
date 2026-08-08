@@ -54,3 +54,47 @@
     entity_id: light.hue_smartplug_switch
     domain: light
   mode: single
+- id: '1766842767568'
+  alias: Tænd globus
+  description: ''
+  triggers:
+  - trigger: time
+    at: '18:00:00'
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 4acaff638c48e588623bc6ff6ebfce42
+    entity_id: 2cf15145f5e5d8448f3dafa0ff95a023
+    domain: switch
+  mode: single
+- id: '1766842871388'
+  alias: New automation
+  description: ''
+  triggers:
+  - trigger: time
+    at: 07:30:00
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: 4acaff638c48e588623bc6ff6ebfce42
+    entity_id: 2cf15145f5e5d8448f3dafa0ff95a023
+    domain: switch
+    metadata:
+      secondary: false
+  mode: single
